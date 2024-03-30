@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.082"
-        app:srcCompat="@drawable/vertificationCode" />
+        app:srcCompat="@drawable/vertification_code" />
 
     <TextView
         android:id="@+id/textView7"
@@ -40,14 +40,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.454" />
 
+
+    <EditText
+        android:id="@+id/textPin"
+        android:layout_width="295dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="56dp"
+        android:hint="Nhập mã 6 số"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="391dp" />
+
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnCode"
+        android:layout_width="295dp"
+        android:layout_height="40dp"
         android:text="Xác nhận "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="461dp" />
+        tools:layout_editor_absoluteY="467dp" />
 
     <TextView
         android:id="@+id/textView11"
@@ -63,7 +74,7 @@
         tools:layout_editor_absoluteY="549dp" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textRecent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"

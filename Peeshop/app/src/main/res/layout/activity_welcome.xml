@@ -15,5 +15,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/WelcomeCuate" />
+        app:srcCompat="@drawable/welcome" />
+
+    <!-- Activity man hinh cho ung dung    -->
+
+    <activity android:name=".SplashScreenActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
