@@ -27,7 +27,7 @@ import com.example.myapplication.ui.login.LoginViewModel;
 import com.example.myapplication.ui.login.LoginViewModelFactory;
 import com.example.myapplication.databinding.ActivityResetPasswordBinding;
 
-public class LoginActivity extends AppCompatActivity {
+public class ResetPassword extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
     private ActivityResetPasswordBinding binding;
