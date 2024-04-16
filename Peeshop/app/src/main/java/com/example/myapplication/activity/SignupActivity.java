@@ -19,6 +19,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
     private EditText textFirstName, textLastName, textEmail, textPass, textConfirmPass;
@@ -27,11 +29,17 @@ public class SignupActivity extends AppCompatActivity {
     private Button btnSignUp;
     private FirebaseAuth mAuth;
     private static final int RC_SIGN_IN = 9001;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_sign_up);
+
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference usersRef = database.getReference("users");
 
         //anh xạ id
         textFirstName = findViewById(R.id.textFirstName);
@@ -42,7 +50,7 @@ public class SignupActivity extends AppCompatActivity {
         textLogin = findViewById(R.id.textLogin);
         btnSignUp = findViewById(R.id.btnSignUp);
         imgBack = findViewById(R.id.imgBack);
-        mAuth = FirebaseAuth.getInstance();
+
 
         //Nếu không điền đủ thông tin thì hiện lỗi
 
@@ -72,7 +80,8 @@ public class SignupActivity extends AppCompatActivity {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if (task.isSuccessful()) {
-
+                                                    String fullName = firstName + " " + lastName;
+                                                    usersRef.child(user.getUid()).child("fullName").setValue(fullName);
                                                     Toast.makeText(SignupActivity.this, "Mã xác thực đã gửi về email của bạn!", Toast.LENGTH_SHORT).show();
                                                     //Chuyển hướng người dùng đến màn hình đăng nhập
                                                     Intent intent = new Intent(SignupActivity.this, Loginactivity.class);
