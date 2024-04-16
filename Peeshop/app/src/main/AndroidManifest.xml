@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,29 +16,38 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".activity.SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".ResetPassword"
+            android:name=".activity.LoveActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.login.ResetPassword"
-            android:exported="false"
-            android:label="@string/title_activity_reset_password" />
+            android:name=".activity.CartActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6876883522407995~7818860164" />
+
         <activity
-            android:name=".VertificationCode"
+            android:name=".activity.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".enterEmail"
+            android:name=".activity.BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUp"
+            android:name=".activity.ResetPassword"
             android:exported="false" />
         <activity
-            android:name=".Loginactivity"
+            android:name=".activity.SignupActivity"
             android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".activity.Loginactivity"-->
+<!--            android:exported="false" /> &lt;!&ndash; <activity &ndash;&gt;-->
+        <!-- android:name=".activity.MainActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.Loginactivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
